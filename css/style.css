@@ -50,20 +50,20 @@ table {
 img{
   max-width: 100%;
   height: auto;
+  display: block;
 }
 
 body{
   font-family: "Noto sans TC", sans-serif;
 }
-*,*:after,*:before {
+*,*::after,*::before {
   box-sizing: border-box;
 }
 
 /* 容器 */
 .container{
-  max-width: 1024px;
+  max-width: 940px;
   margin: 0 auto;
-  padding: 30px 42px;
 }
 @media (max-width:992px){
   .container{
@@ -73,8 +73,6 @@ body{
 @media (max-width:767px){
   .container{
     max-width: 375px;
-    padding: 0;
-    padding-top: 30px;
   }
 }
 /* 頁首 */
@@ -82,9 +80,10 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 30px;
   padding-bottom: 30px;
 }
-@media (max-width:767px){
+@media (max-width:992px){
   .header{
     justify-content: space-around;
   }
@@ -100,7 +99,6 @@ body{
 }
 
 .logo-pc img{
-  display: block;
   height: 40px;
   width: 100%;
 }
@@ -135,37 +133,29 @@ body{
 .nav{
   display: flex;
   align-items: center;
-  position: relative;
 }
 .nav li{
   padding-right: 70px;
   list-style: none;
 }
 .nav a{
-  width: 24px;
-  height: 24px;
   color: #3F5D45;
   font-weight: 500;
+  line-height: 2rem;
   text-decoration: none;
 }
 .nav li a:hover{
   color: #62905A;
-  padding: 20px;
+  padding: 16px;
   border-bottom: 2px solid #62905A;
   border-radius: 5px;
   box-shadow: 0 0 5px #62905A;
   transition: all .3s;
 }
-.nav img{
-  display: block;
-  position: absolute;
-  top: -2px;
-  right: 0;
-}
+
 .nav img:hover{
   color: #62905A;
-  padding: 16px;
-  background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/student-week1/shopping_cart.png) no-repeat center;
+  padding: 6px 16px;
   border-bottom: 2px solid #62905A;
   border-radius: 5px;
   box-shadow: 0 0 5px #62905A;
@@ -175,10 +165,12 @@ body{
   .nav li{
     display: none;
   }
+  .nav img:hover{
+  padding: 0;
+  }
 }
 
 .banner{
-  width: 100%;
   margin-bottom: 60px;
 }
 @media (max-width:767px){
@@ -203,12 +195,10 @@ body{
   width: 30%;
 }
 .menu a{
-  display: inline-block;
+  display: block;
   text-decoration: none;
   color: #3F5D45;
-  width: 100%;
-  height: 100%;
-  padding: 16px 0px;
+  padding: 16px 0;
 }
 .menu-category{
   font-size: 24px;
@@ -236,11 +226,11 @@ body{
   color: #3F5D45;
   text-align: center;
 }
-.menu-selected a:hover {
+.menu-selected:hover {
   background-color: #EAF0ED;
   transition: all .5s;
 }
-.menu-item a:hover {
+.menu-item:hover {
   background-color: #EAF0ED;
   transition: all .5s;
 }
@@ -274,7 +264,8 @@ body{
 .productList-item p{
   position: absolute;
   left: 20px;
-  width: 36px;
+  writing-mode: vertical-lr;
+  letter-spacing: 5px;
   line-height: 20px;
   color: #fff;
   background: #3F5D45;
@@ -346,13 +337,7 @@ body{
   display: flex;
   justify-content: flex-end;
 }
-.pagination ul{
-  display: flex;
-  align-items: center; 
-}
-
 .pagination-arrow img{
-  display: block;
   padding: 17px;
   line-height: 20px;
   border: 1px solid #EAF0ED;
@@ -361,13 +346,14 @@ body{
   background-color: #EAF0ED;
 }
 .pagination-selected{
-  display: block;
+  display: inline-flex;
   width: 60px;
   height: 60px;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   font-weight: 100;
   line-height: 28px;
-  padding: 16px 23px;
   border: 1px solid #3F5D45;
   background: #3F5D45;
   color: #fff;
@@ -377,14 +363,15 @@ body{
   background-color: #3F5D45;
 }
 .pagination-item{
-  display: block;
+  display: inline-flex;
   width: 60px;
   height: 60px;
+  justify-content: center;
+  align-items: center;
   font-size: 20px;
   font-weight: 100;
   line-height: 28px;
   color: #3F5D45;
-  padding: 16px 23px;
   border: 1px solid #EAF0ED;
   text-decoration: none;
 }
@@ -427,19 +414,18 @@ body{
 }
 .subscription-input{
   display: flex;
-  align-items: center;
+  max-width: 380px;
+  height: 64px;
 }
 .subscription-typeIn{
-  max-width: 316px;
-  height: 56px;
+  width: 316px;
   font-size: 24px;
   border: 0;
   padding-left: 60px;
   background: #EAF0ED url(https://hexschool.github.io/webLayoutTraining1st/student-week1/mail-24px.png) no-repeat 20px 16px;
 }
 .subscription-btn{
-  display: block;
-  padding: 21.25px 32px;
+  width: 64px;
   border: 0;
   background: url(https://hexschool.github.io/webLayoutTraining1st/student-week1/arrow_forward-24px.png) #FFE180 no-repeat center;
   cursor: pointer;
@@ -480,7 +466,6 @@ body{
 .footer-content{
   display: flex;
   justify-content: space-between;
-  align-items: stretch;
 }
 .footer-content-info{
   display: flex;
@@ -499,14 +484,13 @@ body{
 .footer-content-slogan{
   display: flex;
   flex-direction: row-reverse;
-  align-items: stretch;
 }
 .footer-content-slogan p{
+  color: #3F5D45;
   font-size: 28px;
   font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
   font-weight: 600;
   line-height: 32px;
-  color: #3F5D45;
   writing-mode: vertical-rl;
   padding: 6px;
 }
