@@ -146,6 +146,7 @@ body{
   list-style: none;
 }
 .nav a{
+  display: block;
   color: #3F5D45;
   font-weight: 500;
   line-height: 2rem;
@@ -183,9 +184,24 @@ body{
     background: white;
     flex-direction: column;
   }
-
+  .nav li a:hover{
+    color: #fff;
+    padding: 0 200px;
+    background: #3F5D45;
+    border-bottom: 0 #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 #fff;
+    transition: all .3s;
+  }
+  .nav li a:active{
+    color: #fff;
+    padding: 0 200px;
+    background: #3F5D45;
+    border-radius: 10px;
+    transition: all .3s;
+  }
   .cart:hover{
-  padding: 0;
+    padding: 0;
   }
 }
 
